@@ -16,11 +16,14 @@ jobs:
         runs-on: ubuntu-latest
         steps:
         - uses: actions/checkout@v4
+        - run: id && ls -l
+        - uses: docker://registry.access.redhat.com/ubi8/openjdk-17
+          name: package
+          with:
+            args: >-
+                id
         - uses: actions/setup-java@v4
-          with: 
-            distribution: 'temurin'
-            java-version: '17'
-        - run: mvn package
+          with: java-version: '17'
         - uses: docker://docker.io/sonarsource/sonar-scanner-cli:4.7
           name: scan-source
           with:
