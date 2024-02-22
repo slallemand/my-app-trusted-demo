@@ -26,6 +26,6 @@ jobs:
           name: scan-source
           with:
             args: >-
-                /opt/sonar-scanner/bin/sonar-scanner -X -Dsonar.projectKey=my-quarkus-app
+                /opt/sonar-scanner/bin/sonar-scanner -X -Dsonar.projectKey=my-app-trusted-demo
                 -Dsonar.sources=./ -Dsonar.host.url=${{ secrets.SONARQUBE_URL }}
                 -Dsonar.login=${{ secrets.SONARQUEBPROJECTSECRET }} -Dsonar.java.binaries=target/classes
