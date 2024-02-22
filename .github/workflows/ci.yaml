@@ -21,7 +21,7 @@ jobs:
           with:
             options: --user 0
             args: >-
-                mvn package
+                id
         - uses: docker://docker.io/sonarsource/sonar-scanner-cli:4.7
           name: scan-source
           with:
