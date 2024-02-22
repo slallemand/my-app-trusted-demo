@@ -16,7 +16,13 @@ jobs:
         runs-on: ubuntu-latest
         steps:
         - uses: actions/checkout@v4
+        - uses: docker://registry.redhat.io/ubi8/openjdk-17
+          name: package
+          with:
+            args: >-
+                mvn package
         - uses: docker://docker.io/sonarsource/sonar-scanner-cli:4.7
+          name: scan-source
           with:
             args: >-
                 /opt/sonar-scanner/bin/sonar-scanner -X -Dsonar.projectKey=my-quarkus-app
