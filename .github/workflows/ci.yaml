@@ -12,8 +12,8 @@ permissions:
   contents: read
 
 jobs:
-    build:
-        runs-on: ubuntu-latest
-        steps:
-          - uses: actions/checkout@v4
-          - uses: docker.io/sonarsource/sonar-scanner-cli:4.7
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+#      - uses: sonarsource/sonar-scanner-cli@4.7
