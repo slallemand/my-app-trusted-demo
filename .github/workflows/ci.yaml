@@ -22,8 +22,8 @@ jobs:
             entrypoint: /bin/sh
             args: >-
                 -c "
-                env
-                pwd
+                env;
+                pwd;
                 /opt/sonar-scanner/bin/sonar-scanner -X -Dsonar.projectKey=${{ vars.INPUT_SONARQUBEPROJECTKEY }}
                 -Dsonar.sources=./ -Dsonar.host.url=${{ secrets.SONARQUBE_URL }}
                 -Dsonar.login=${{ secrets.SONARQUEBPROJECTSECRET }} -Dsonar.java.binaries=target/classes"
