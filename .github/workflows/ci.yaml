@@ -1,19 +1,19 @@
 name: Continuous Integration
 
 on:
-  pull_request:
-  push:
-    branches:
-      - main
-  workflow_dispatch:
+    pull_request:
+    push:
+        branches:
+        - main
+    workflow_dispatch:
 
 
 permissions:
-  contents: read
+    contents: read
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-#      - uses: sonarsource/sonar-scanner-cli@4.7
+    build:
+        runs-on: ubuntu-latest
+        steps:
+        - uses: actions/checkout@v4
+        - uses: docker://sonarsource/sonar-scanner-cli:4.7
