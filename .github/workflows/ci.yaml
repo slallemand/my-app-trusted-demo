@@ -21,7 +21,8 @@ jobs:
           name: package
           with:
             args: >-
-                id  && ls -l
+                id
+                ls -l
         - uses: docker://docker.io/sonarsource/sonar-scanner-cli:4.7
           name: scan-source
           with:
