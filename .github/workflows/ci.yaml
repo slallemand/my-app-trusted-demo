@@ -22,8 +22,6 @@ jobs:
           with:
             args: >-
                 id
-        - uses: actions/setup-java@v4
-          with: java-version: '17'
         - uses: docker://docker.io/sonarsource/sonar-scanner-cli:4.7
           name: scan-source
           with:
