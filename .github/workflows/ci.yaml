@@ -19,9 +19,8 @@ jobs:
         - uses: docker://docker.io/sonarsource/sonar-scanner-cli:4.7
           with:
             sonarqubeProjectKey: my-quarkus-app
-            entrypoint: /bin/sh
+            #entrypoint: /bin/sh
             args: >-
-                set -x
                 env
                 pwd
                 /opt/sonar-scanner/bin/sonar-scanner -X -Dsonar.projectKey=${{ vars.INPUT_SONARQUBEPROJECTKEY }}
