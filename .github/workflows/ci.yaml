@@ -19,6 +19,7 @@ jobs:
         - uses: docker://registry.access.redhat.com/ubi8/openjdk-17
           name: package
           with:
+            options: --user 0
             args: >-
                 mvn package
         - uses: docker://docker.io/sonarsource/sonar-scanner-cli:4.7
